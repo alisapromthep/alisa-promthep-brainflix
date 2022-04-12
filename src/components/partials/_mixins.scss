@@ -1,0 +1,24 @@
+@mixin tablet {
+    @media (min-width:48rem) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: 80rem){
+        @content;
+    }
+}
+
+@mixin profile-photo {
+    width: 2.25rem;
+    height: 2.25rem;
+    object-fit: cover;
+    object-position: left;
+    border-radius: 50%;
+
+    @include tablet {
+        width: 3rem;
+        height: 3rem;
+    }
+}

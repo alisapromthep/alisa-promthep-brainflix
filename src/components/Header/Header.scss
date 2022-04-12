@@ -1,0 +1,17 @@
+// @use '../partials/typography' as *;
+@use '../partials/mixins' as *;
+@use '../partials/color' as *;
+
+
+
+.header {
+
+    &__search-img {
+        @include profile-photo;
+        margin: 1.2rem 1rem 0 0;
+    }
+
+    &__upload-container {
+        background-color: $primary_brainflix-blue;
+    }
+}
