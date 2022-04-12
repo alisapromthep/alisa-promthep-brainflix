@@ -10,6 +10,23 @@
     }
 }
 
+@mixin mobile-padding {
+    padding: 1rem;
+}
+
+@mixin tablet-padding {
+    padding: 1.5rem;
+}
+
+// @mixin desktop-padding {
+//     padding: 3rem 6rem;    
+// }
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
 @mixin profile-photo {
     width: 2.25rem;
     height: 2.25rem;

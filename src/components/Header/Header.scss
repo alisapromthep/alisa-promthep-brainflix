@@ -1,14 +1,26 @@
-// @use '../partials/typography' as *;
 @use '../partials/mixins' as *;
 @use '../partials/color' as *;
 
-
+.brainflix-logo {
+    background-color: $primary_white;
+    max-width: 7.5rem;
+    max-height: 1.5625rem;
+}
 
 .header {
 
+    @include flex-column;
+    @include mobile-padding;
+
     &__search-img {
         @include profile-photo;
-        margin: 1.2rem 1rem 0 0;
+        margin-left: 1rem;
+
+    }
+    
+    &__search-container{
+        display: flex;
+        
     }
 
     &__upload-container {

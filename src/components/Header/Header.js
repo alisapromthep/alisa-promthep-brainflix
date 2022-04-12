@@ -7,8 +7,8 @@ import uploadLogo from '../../assets/images/icons/upload.svg';
 
 function Header() {
     return (
-        <header>
-            <img src={brainflixLogo} alt='BrainFlix Logo'/>
+        <header className='header'>
+            <img className='brainflix-logo' src={brainflixLogo} alt='BrainFlix Logo'/>
             <div className='header__search-container'>
                 <form className = 'header__search-bar'>
                     <img src={searchLogo} alt='magnifying glass'/>
@@ -17,7 +17,7 @@ function Header() {
                 <img className='header__search-img' src={mohanLogo} alt='mohan profile'/>
             </div>
             <div className='header__upload-container'>
-            <img src={uploadLogo} />
+            <img src={uploadLogo} alt='arrow pointing up for upload' />
             <button>upload</button>
             </div>
         </header>
