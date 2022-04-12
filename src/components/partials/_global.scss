@@ -1,0 +1,9 @@
+@use '../partials/color' as *;
+@use '../partials/mixins' as *;
+
+.button {
+    @include button-reset;
+    color: $primary_white;
+    text-transform: uppercase;
+    
+}

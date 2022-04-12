@@ -11,14 +11,14 @@ function Header() {
             <img className='brainflix-logo' src={brainflixLogo} alt='BrainFlix Logo'/>
             <div className='header__search-container'>
                 <form className = 'header__search-bar'>
-                    <img src={searchLogo} alt='magnifying glass'/>
-                    <input type="text" placeholder="Search" />
+                    <img className='header__search-icon' src={searchLogo} alt='magnifying glass'/>
+                    <input className='header__search-input' type="text" placeholder="Search" />
                 </form>
                 <img className='header__search-img' src={mohanLogo} alt='mohan profile'/>
             </div>
             <div className='header__upload-container'>
             <img src={uploadLogo} alt='arrow pointing up for upload' />
-            <button>upload</button>
+            <button className='button'>upload</button>
             </div>
         </header>
 

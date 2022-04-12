@@ -1,3 +1,5 @@
+@use '../partials/color' as *;
+
 @mixin tablet {
     @media (min-width:48rem) {
         @content;
@@ -39,3 +41,15 @@
         height: 3rem;
     }
 }
+
+@mixin boxes-round {
+    border: 1px solid $secondary_mercury;
+    border-radius: 4px;    
+};
+
+@mixin button-reset {
+    border: none;
+    background-color: transparent;
+    
+}
+

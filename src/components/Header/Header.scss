@@ -1,5 +1,6 @@
 @use '../partials/mixins' as *;
 @use '../partials/color' as *;
+@use '../partials/global' as *;
 
 .brainflix-logo {
     background-color: $primary_white;
@@ -11,19 +12,46 @@
 
     @include flex-column;
     @include mobile-padding;
+    align-items: center;
 
-    &__search-img {
-        @include profile-photo;
-        margin-left: 1rem;
+    &__search{
 
-    }
+        &-container {
+            display: flex;
+            margin: 1rem 0;
+            width: 100%;
+        }
+        &-bar {
+            @include boxes-round;
+            background-color: $secondary_alabaster;
+            padding: 0.5rem;
+            display: flex;
+            flex-grow: 1;
+        }
     
-    &__search-container{
-        display: flex;
-        
+        &-img {
+            @include profile-photo;
+            margin-left: 1rem;
+        }
+
+        &-icon {
+            width: 1rem;
+        }
+
+        &-input{
+            @include button-reset;
+            font-size: 0.7rem;
+            color: $primary_brainflix-black;
+            margin-left: 0.5rem;
+        }
     }
 
     &__upload-container {
+        @include button-reset;
         background-color: $primary_brainflix-blue;
+        width: 100%;
+        border: 1px solid $secondary_mercury;
+        border-radius: 4px;
+
     }
 }
