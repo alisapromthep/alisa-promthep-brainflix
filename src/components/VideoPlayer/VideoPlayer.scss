@@ -4,6 +4,9 @@
 .videoplayer{
 
     &__title {
+
+        @include mobile-padding;
         font-weight: 500;
+
     }
 }
