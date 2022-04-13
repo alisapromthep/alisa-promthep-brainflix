@@ -1,2 +1,9 @@
 @use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/color' as *;
+
+.videoplayer{
+
+    &__title {
+        font-weight: 500;
+    }
+}

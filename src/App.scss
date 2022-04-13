@@ -16,7 +16,7 @@ body {
   @include button-reset;
   color: $primary_white;
   text-transform: uppercase;
-  font-size: 0.75rem;
+  font-size: .75rem;
   margin-left: 35%;
 
   @include tablet {

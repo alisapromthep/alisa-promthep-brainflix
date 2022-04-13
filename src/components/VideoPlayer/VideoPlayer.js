@@ -6,18 +6,12 @@ function VideoPlayer() {
 
 
     return (
-        <>
-        <video poster="{videoDetail[0].image}">
-            <source src="{videoDetail[0].video}" type="video"/>
+        <section className='videoplayer'>
+        <video controls width="100%" poster={videoDetail[0].image}>
+            <source src={videoDetail[0].video} type="video"/>
         </video>
-        <div>
-            <p>{videoDetail[0].title}</p>
-            
-
-            <p>hello world</p>
-        </div>
-
-        </>
+        <h1 className='videoplayer__title'>{videoDetail[0].title}</h1>
+        </section>
     )
 }
 
