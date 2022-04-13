@@ -22,7 +22,7 @@
             width: 100%;
         }
         &-bar {
-            @include boxes-round;
+            @include boxes-border;
             background-color: $secondary_alabaster;
             padding: 0.5rem;
             display: flex;
@@ -46,12 +46,20 @@
         }
     }
 
-    &__upload-container {
-        @include button-reset;
-        background-color: $primary_brainflix-blue;
-        width: 100%;
-        border: 1px solid $secondary_mercury;
-        border-radius: 4px;
+    &__upload {
 
+        &-container {
+            @include button-reset;
+            @include boxes-border;
+            background-color: $primary_brainflix-blue;
+            width: 100%;
+            padding: 0.5rem;
+            display: flex;
+            
+
+        }
+        &-icon {
+            width: 1.2rem;
+        }
     }
 }
