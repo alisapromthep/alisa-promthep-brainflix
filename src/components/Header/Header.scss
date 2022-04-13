@@ -14,12 +14,45 @@
     @include mobile-padding;
     align-items: center;
 
+    @include tablet {
+        flex-direction: row;
+        @include tablet-padding;
+    }
+
+    @include desktop {
+        justify-content: center;
+    }
+
+    &__container {
+        @include flex-column;
+        width: 100%;
+
+        @include  tablet {
+            flex-direction: row;
+            justify-content: flex-end;
+        }
+
+        @include desktop {
+            width: 70%;
+        }
+
+    }
+
     &__search{
 
         &-container {
             display: flex;
             margin: 1rem 0;
             width: 100%;
+
+            @include tablet {
+                width: 50%;
+                margin: 0;
+            }
+
+            @include desktop {
+                width: 30%;
+            }
         }
         &-bar {
             @include boxes-border;
@@ -27,11 +60,29 @@
             padding: 0.5rem;
             display: flex;
             flex-grow: 1;
+
         }
     
         &-img {
             @include profile-photo;
             margin-left: 1rem;
+
+            @include tablet {
+                display: none;
+            }
+
+            &--tablet {
+                display: none;
+
+                @include tablet {
+                    display: flex;
+                }
+
+                @include desktop {
+                    margin-left: 2rem;
+                }
+            }
+
         }
 
         &-icon {
@@ -43,6 +94,7 @@
             font-size: 0.7rem;
             color: $primary_brainflix-black;
             margin-left: 0.5rem;
+
         }
     }
 
@@ -55,7 +107,16 @@
             width: 100%;
             padding: 0.5rem;
             display: flex;
-            
+
+            @include tablet {
+                width: 20%;
+                margin-left: 1rem;
+            }
+
+            @include desktop {
+                width: 15%;
+            }
+
 
         }
         &-icon {

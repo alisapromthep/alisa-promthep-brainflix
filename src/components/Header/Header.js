@@ -9,16 +9,19 @@ function Header() {
     return (
         <header className='header'>
             <img className='brainflix-logo' src={brainflixLogo} alt='BrainFlix Logo'/>
-            <div className='header__search-container'>
-                <form className = 'header__search-bar'>
-                    <img className='header__search-icon' src={searchLogo} alt='magnifying glass'/>
-                    <input className='header__search-input' type="text" placeholder="Search" />
-                </form>
-                <img className='header__search-img' src={mohanLogo} alt='mohan profile'/>
-            </div>
-            <div className='header__upload-container'>
-            <img className='header__upload-icon' src={uploadLogo} alt='arrow pointing up for upload' />
-            <button className='button'>upload</button>
+            <div className="header__container">
+                <div className='header__search-container'>
+                    <form className = 'header__search-bar'>
+                        <img className='header__search-icon' src={searchLogo} alt='magnifying glass'/>
+                        <input className='header__search-input' type="text" placeholder="Search" />
+                    </form>
+                    <img className='header__search-img' src={mohanLogo} alt='mohan profile'/>
+                </div>
+                <div className='header__upload-container'>
+                <img className='header__upload-icon' src={uploadLogo} alt='arrow pointing up for upload' />
+                <button className='button'>upload</button>
+                </div>
+                <img className='header__search-img header__search-img--tablet' src={mohanLogo} alt='mohan profile'/>
             </div>
         </header>
 
