@@ -1,0 +1,36 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/color' as *;
+
+.comment {
+    &__container {
+        @include mobile-padding;
+        @include divider;
+        border-top: none;
+        display: flex;
+
+    }
+    &__photo-holder {
+        @include profile-photo;
+        background-color: $secondary_mercury;
+        min-width: 2.25rem;
+        margin: 1.2rem 1rem 0 0;
+
+    }
+
+    &__card {
+        @include flex-column;
+        padding-right: 1.5rem;
+        width: 14.75rem;
+
+        &-detail {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0.5rem 0;
+        }
+    }
+
+    &__content {
+        margin: 0;
+    }
+}
