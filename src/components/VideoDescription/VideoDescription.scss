@@ -1,0 +1,41 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/color' as *;
+
+.channelinfo {
+    
+    @include mobile-padding;
+    padding-top: 0;
+
+    &__container {
+        @include divider;
+        padding-top: 1rem;
+        display: flex;
+    }
+    &__right {
+        margin-left: 3rem;
+
+        &-box {
+            display: flex;
+            align-items: baseline;
+        }
+    }
+    
+    &__detail {
+        color: $primary_silver;
+        padding-bottom: 1rem;
+
+        &--bold {
+            color: $primary_brainflix-black;
+            font-weight: 700;
+        }
+    }
+
+    &__icon {
+        padding-right: 1rem;
+    }
+    
+}
+
+.description {
+    padding-top: 1rem;
+}
