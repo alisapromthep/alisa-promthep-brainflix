@@ -3,6 +3,10 @@
 
 .videoplayer{
 
+    &__video {
+        width: 100%;
+    }
+
     &__title {
 
         @include mobile-padding;

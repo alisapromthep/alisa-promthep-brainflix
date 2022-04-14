@@ -1,0 +1,22 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/color' as *;
+
+.card {
+
+    display: flex;
+    height: 6rem;
+    padding: 1rem 0;
+
+    &__thumbnail {
+        @include boxes-border;
+        background-color: $secondary_mercury;
+    }
+    &__detail-container {
+        margin-left: 1rem;
+    }
+
+    &__title {
+        font-weight: 700;
+    }
+
+}
