@@ -17,8 +17,8 @@ function Header() {
                     </form>
                     <img className='header__search-img' src={mohanLogo} alt='mohan profile'/>
                 </div>
-                <div className='header__upload-container'>
-                <img className='header__upload-icon' src={uploadLogo} alt='arrow pointing up for upload' />
+                <div className='button__container'>
+                <img className='button__upload-icon' src={uploadLogo} alt='arrow pointing up for upload' />
                 <button className='button'>upload</button>
                 </div>
                 <img className='header__search-img header__search-img--tablet' src={mohanLogo} alt='mohan profile'/>

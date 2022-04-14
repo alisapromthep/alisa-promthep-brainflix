@@ -98,29 +98,4 @@
         }
     }
 
-    &__upload {
-
-        &-container {
-            @include button-reset;
-            @include boxes-border;
-            background-color: $primary_brainflix-blue;
-            width: 100%;
-            padding: 0.5rem;
-            display: flex;
-
-            @include tablet {
-                width: 20%;
-                margin-left: 1rem;
-            }
-
-            @include desktop {
-                width: 15%;
-            }
-
-
-        }
-        &-icon {
-            width: 1.2rem;
-        }
-    }
 }

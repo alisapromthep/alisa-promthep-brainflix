@@ -1,0 +1,36 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/color' as *;
+
+.comment {
+    @include mobile-padding;
+    display: flex;
+    justify-content: space-between;
+    @include divider;
+    border-top: none;
+
+    &__form {
+        @include flex-column;
+    }
+
+    &__profile-img {
+        @include profile-photo;
+        margin: 1.2rem 1rem 0 0;
+    }
+
+    &__label {
+        color: $primary_silver;
+        text-transform: uppercase;
+        font-size: 0.7rem;
+        font-weight: 700;
+    }
+
+    &__input {
+        border-radius: 4px;
+        padding: 0.75rem;
+        width: 100%;
+        height: 6rem;
+        background-color: $secondary_alabaster;
+        border: 1px solid $secondary_mercury;
+        font-family: "AvenirNext LT Pro";
+    }
+}

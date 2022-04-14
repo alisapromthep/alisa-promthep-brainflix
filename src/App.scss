@@ -26,4 +26,33 @@ body {
   @include desktop {
       margin-left: 5%;
   }
+  
+  &__container{
+    @include button-reset;
+    @include boxes-border;
+    background-color: $primary_brainflix-blue;
+    width: 100%;
+    padding: 0.5rem;
+    display: flex;
+
+    @include tablet {
+        width: 20%;
+        margin-left: 1rem;
+    }
+
+    @include desktop {
+        width: 15%;
+    }
+
+  }
+
+  &__upload-icon {
+      width: 1.2rem;
+  }
+
+  &__add-icon{
+      @extend .button__upload-icon;
+  }
+  
 }
+
