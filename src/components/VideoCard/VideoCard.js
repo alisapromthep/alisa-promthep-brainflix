@@ -1,16 +1,16 @@
 import './VideoCard.scss';
 import videoDetail from '../../data/video-details.json';
 
-function VideoCard() {
+function VideoCard(props) {
     return (
         <article className='card'>
-            <video className='card__thumbnail' poster={videoDetail[1].image}></video>
+            <video className='card__thumbnail' poster={props.videoDetail.image}></video>
             <div className='card__detail-container'>
                 <p className='card__title'>
-                    {videoDetail[1].title}
+                    {props.videoDetail.title}
                 </p>
                 <p className='card__channel'>
-                {videoDetail[1].channel}
+                {props.videoDetail.channel}
                 </p>
             </div>
         </article>
