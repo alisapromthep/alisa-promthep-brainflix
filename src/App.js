@@ -1,26 +1,34 @@
 
 import './App.scss';
 import Header from './components/Header/Header';
-import VideoPlayer from './components/VideoPlayer/VideoPlayer';
-import CommentForm from './components/CommentForm/CommentForm';
-import CommentCard from './components/CommentCard/CommentCard';
+import VideoSection from './components/VideoSection/VideoSection';
 import VideoFeed from './components/VideoFeed/VideoFeed';
 import videoInfo from './data/videos.json';
 import videoDetail from './data/video-details.json';
+import React, { Component } from 'react';
 
-function App() {
-  return (
-    <>
-    <Header />
-    <main>
-      <VideoPlayer />
-      <CommentForm />
-      <CommentCard />
-      <CommentCard />
-      <VideoFeed videoInfo={videoInfo}/>
-    </main>
-    </>
-  );
+class App extends Component {
+
+  state = {
+    videos: videoInfo,
+    selectedVideo: videoDetail[0],
+  };
+
+
+  render() {
+    console.log(this.state.videos)
+    console.log(this.state.selectedVideo)
+
+    return (
+      <>
+      <Header />
+      <main>
+        <VideoSection selectVideo={this.state.selectedVideo}/>
+        <VideoFeed videoInfo={this.state.videos}/>
+      </main>
+      </>
+    );
+  }
 }
 
 export default App;
