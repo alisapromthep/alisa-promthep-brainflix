@@ -6,7 +6,7 @@ function CommentSection({selectedComment}) {
 
     return (
         <div>
-            <CommentForm />
+            <CommentForm commentInfo={selectedComment}/>
             {selectedComment.map((comment,index)=>{
                 return (
                     <CommentCard 

@@ -2,10 +2,11 @@ import './CommentForm.scss';
 import mohanLogo from '../../assets/images/Mohan-muruge.jpg';
 import addComment from '../../assets/images/icons/add_comment.svg';
 
-function CommentForm() {
+function CommentForm({commentInfo}) {
+
     return (
         <>
-        <p>num Comments</p>
+        <p>{commentInfo.length} Comments</p>
         <div className='comment'>
             <img className='comment__profile-img' src={mohanLogo} alt='mohan profile'/>
             <form className='comment__form'>
