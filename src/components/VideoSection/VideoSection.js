@@ -7,7 +7,7 @@ function VideoSection(props) {
     return (
         <div>
             <VideoPlayer selectedVideo={props.selectVideo}/>
-            <CommentSection />
+            <CommentSection selectedComment={props.selectVideo.comments}/>
         </div>
     );
 }
