@@ -1,11 +1,12 @@
 import './VideoFeed.scss';
 import VideoCard from '../VideoCard/VideoCard';
-import videoArray from '../../data/videos.json';
 
-function VideoFeed () {
+
+function VideoFeed (props) {
+
     return (
         <section>
-            {videoArray.map((video)=>(
+            {props.videoInfo.map((video)=>(
                 <VideoCard key ={video.id}
                 videoDetail={video}/>
             ))}

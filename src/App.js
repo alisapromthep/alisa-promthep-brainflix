@@ -5,6 +5,8 @@ import VideoPlayer from './components/VideoPlayer/VideoPlayer';
 import CommentForm from './components/CommentForm/CommentForm';
 import CommentCard from './components/CommentCard/CommentCard';
 import VideoFeed from './components/VideoFeed/VideoFeed';
+import videoInfo from './data/videos.json';
+import videoDetail from './data/video-details.json';
 
 function App() {
   return (
@@ -15,7 +17,7 @@ function App() {
       <CommentForm />
       <CommentCard />
       <CommentCard />
-      <VideoFeed />
+      <VideoFeed videoInfo={videoInfo}/>
     </main>
     </>
   );
