@@ -8,9 +8,12 @@
     }
 
     &__title {
-
         @include mobile-padding;
         font-weight: 500;
+
+        @include tablet {
+            font-weight: 700;
+        }
 
     }
 }

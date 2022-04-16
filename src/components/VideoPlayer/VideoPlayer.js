@@ -1,11 +1,11 @@
 import './VideoPlayer.scss';
 import VideoDescription from '../VideoDescription/VideoDescription';
-import videoDetail from '../../data/video-details.json';
-
+import { convertTimeStamp } from '../../DateTimeFunction';
 
 
 function VideoPlayer(props) {
     const {channel, comments, description, duration, id, image, likes, timestamp, title, video, views} = props.selectedVideo; 
+
 
     return (
         <section className='videoplayer'>
@@ -15,7 +15,7 @@ function VideoPlayer(props) {
             <h1 className='videoplayer__title'>{title}</h1>
             <VideoDescription 
             channel={channel}
-            timestamp={timestamp}
+            timestamp={convertTimeStamp(timestamp)}
             views={views}
             likes={likes}
             description={description}

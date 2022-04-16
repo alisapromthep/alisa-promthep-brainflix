@@ -19,6 +19,7 @@ class App extends Component {
       selectedVideo: videoDetail.find((video)=> { return video.id === id}),
     })
   }
+
   render() {
     const videoList = this.state.videos.filter((video)=> {return video.id !== this.state.selectedVideo.id});
 
