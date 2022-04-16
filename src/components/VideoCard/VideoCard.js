@@ -1,16 +1,24 @@
 import './VideoCard.scss';
-import videoDetail from '../../data/video-details.json';
 
-function VideoCard(props) {
+
+function VideoCard({videoDetail, onVideoSelect}) {
+
+    const handleVideoSelect = (event) => {
+        event.preventDefault();
+        onVideoSelect(videoDetail.id);
+    }
+
     return (
-        <article className='card'>
-            <video className='card__thumbnail' poster={props.videoDetail.image}></video>
+        <article 
+        className='card'
+        onClick={handleVideoSelect}>
+            <video className='card__thumbnail' poster={videoDetail.image}></video>
             <div className='card__detail-container'>
                 <p className='card__title'>
-                    {props.videoDetail.title}
+                    {videoDetail.title}
                 </p>
                 <p className='card__channel'>
-                {props.videoDetail.channel}
+                {videoDetail.channel}
                 </p>
             </div>
         </article>
