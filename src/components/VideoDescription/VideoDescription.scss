@@ -10,9 +10,25 @@
         @include divider;
         padding-top: 1rem;
         display: flex;
+
+        @include tablet {
+            justify-content: space-between;
+            border-top: none;
+            padding-top: 0;
+        }
+
+    }
+    &__left {
+        @include align-horizontal;
+        width: 25%;
     }
     &__right {
         margin-left: 3rem;
+
+        @include tablet {
+            @include align-horizontal;
+            width: 30%;
+        }
 
         &-box {
             display: flex;
@@ -24,9 +40,17 @@
         color: $primary_silver;
         padding-bottom: 1rem;
 
+        @include tablet {
+            font-size: 0.7rem;
+        }
+
         &--bold {
             color: $primary_brainflix-black;
             font-weight: 700;
+
+            @include tablet {
+                font-size: 0.875rem;
+            }
         }
     }
 

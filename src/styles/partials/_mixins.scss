@@ -29,6 +29,11 @@
     flex-direction: column;
 }
 
+@mixin align-horizontal {
+    display: flex;
+    justify-content: space-between;
+}
+
 @mixin profile-photo {
     width: 2.25rem;
     height: 2.25rem;
