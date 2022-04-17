@@ -12,8 +12,8 @@ function VideoPlayer(props) {
             <video className='videoplayer__video' controls poster={image}>
                 <source src={video} type="video"/>
             </video>
-            <h1 className='videoplayer__title'>{title}</h1>
             <VideoDescription 
+            title={title}
             channel={channel}
             timestamp={convertTimeStamp(timestamp)}
             views={views}

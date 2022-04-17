@@ -4,7 +4,20 @@
 .channelinfo {
     
     @include mobile-padding;
-    padding-top: 0;
+
+    @include tablet {
+        @include tablet-padding;
+    }
+
+    &__title { 
+        font-weight: 500;
+        padding-bottom: 1rem;
+
+        @include tablet {
+            font-weight: 700;
+        }
+
+    }
 
     &__container {
         @include divider;
@@ -27,7 +40,7 @@
 
         @include tablet {
             @include align-horizontal;
-            width: 30%;
+            width: 25%;
         }
 
         &-box {
@@ -42,6 +55,7 @@
 
         @include tablet {
             font-size: 0.7rem;
+            padding-bottom: 0.5rem;
         }
 
         &--bold {

@@ -3,11 +3,12 @@ import videoDetail from '../../data/video-details.json';
 import viewsIcon from '../../assets/images/icons/views.svg';
 import likesIcon from '../../assets/images/icons/likes.svg';
 
-function VideoDescription ({channel, timestamp, views, likes, description}) {
+function VideoDescription ({title, channel, timestamp, views, likes, description}) {
 
     return (
         <>
         <section className='channelinfo'>
+        <h1 className='channelinfo__title'>{title}</h1>
             <div className='channelinfo__container'>
                 <div className='channelinfo__left'>
                     <p className='channelinfo__detail channelinfo__detail--bold'>By {channel}</p>
