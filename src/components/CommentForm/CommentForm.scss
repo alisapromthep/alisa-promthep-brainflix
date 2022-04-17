@@ -2,14 +2,28 @@
 @use '../../styles/partials/color' as *;
 
 .comment {
-    @include mobile-padding;
-    display: flex;
-    justify-content: space-between;
-    @include divider;
-    border-top: none;
+
+    &__container {
+        display: flex;
+        justify-content: center;
+        @include divider;
+        border-top: none;
+        padding: 1rem 0;
+
+    }
+
+    &__number {
+        font-weight: 700;
+    }
 
     &__form {
         @include flex-column;
+
+        @include tablet {
+            flex-direction: row;
+            align-items: center;
+            width: 100%;
+        }
     }
 
     &__profile-img {
@@ -22,6 +36,11 @@
         text-transform: uppercase;
         font-size: 0.7rem;
         font-weight: 700;
+        margin-bottom: 1rem;
+
+        @include tablet {
+            flex-grow: 1;
+        }
     }
 
     &__input {
@@ -32,5 +51,18 @@
         background-color: $secondary_alabaster;
         border: 1px solid $secondary_mercury;
         font-family: "AvenirNext LT Pro";
+        margin-top: 0.5rem;
+
+        @include tablet {
+            height: 2.5rem;
+        }
+    }
+}
+
+.button__container {
+
+    @include tablet {
+        height: 2.5rem;
+        width: 25%;
     }
 }

@@ -32,8 +32,11 @@
 
     }
     &__left {
-        @include align-horizontal;
-        width: 25%;
+        
+        @include tablet {
+            @include align-horizontal;
+            width: 25%;
+        }
     }
     &__right {
         margin-left: 3rem;
@@ -76,4 +79,8 @@
 
 .description {
     padding-top: 1rem;
+
+    @include tablet {
+        padding-top: 1.5rem;
+    }
 }

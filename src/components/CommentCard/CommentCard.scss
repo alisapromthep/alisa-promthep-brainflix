@@ -3,18 +3,21 @@
 
 .comment {
     &__container {
-        @include mobile-padding;
         @include divider;
         border-top: none;
         display: flex;
+        padding: 0.5rem 0;
 
+        @include tablet {
+            padding: 1rem 0;
+        }
     }
+
     &__photo-holder {
         @include profile-photo;
         background-color: $secondary_mercury;
         min-width: 2.25rem;
         margin: 1.2rem 1rem 0 0;
-
     }
 
     &__card {
@@ -22,12 +25,22 @@
         padding-right: 1.5rem;
         width: 14.75rem;
 
+        @include tablet {
+            width: 100%;
+        }
+
         &-detail {
-            display: flex;
-            justify-content: space-between;
+            @include align-horizontal;
             align-items: center;
             margin: 0.5rem 0;
         }
+    }
+
+    &__name {
+        font-weight: 700;
+    }
+    &__date {
+        color: $primary_silver;
     }
 
     &__content {
