@@ -62,11 +62,3 @@
         }
     }
 }
-
-.button__container {
-
-    @include tablet {
-        height: 2.5rem;
-        width: 25%;
-    }
-}

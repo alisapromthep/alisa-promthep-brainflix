@@ -21,6 +21,7 @@
 
     @include desktop {
         justify-content: center;
+        @include mobile-padding;
     }
 
     &__container {
