@@ -1,9 +1,8 @@
 import CommentForm from "../CommentForm/CommentForm";
 import CommentCard from "../CommentCard/CommentCard";
+
 import "./CommentSection.scss"
 function CommentSection({selectComment}) {
-
-
     return (
         <div className="comment">
             <CommentForm commentInfo={selectComment}/>

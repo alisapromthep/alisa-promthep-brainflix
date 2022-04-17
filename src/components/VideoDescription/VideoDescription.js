@@ -17,11 +17,11 @@ function VideoDescription ({selectVideo}) {
                 </div>
                 <div className='channelinfo__right'>
                     <div className='channelinfo__right-box'>
-                        <img className='channelinfo__icon' src={viewsIcon} />
+                        <img className='channelinfo__icon' src={viewsIcon} alt='an eye' />
                         <p className='channelinfo__detail'>{views}</p>
                         </div>
                     <div className='channelinfo__right-box'>
-                        <img className='channelinfo__icon'  src={likesIcon} />
+                        <img className='channelinfo__icon'  src={likesIcon} alt='a heart'/>
                         <p className='channelinfo__detail'>{likes}</p>
                         </div>
                 </div>

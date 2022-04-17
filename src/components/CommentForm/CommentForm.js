@@ -15,7 +15,7 @@ function CommentForm({commentInfo}) {
                         <textarea className='comment__input' typeof='text' name="comment" placeholder='Add a new comment'></textarea>
                     </label>
                     <div className='button__container'>
-                        <img className='button__add-icon' src={addComment} />
+                        <img className='button__add-icon' src={addComment} alt='plus sign'/>
                         <button className='button'>comment</button>
                     </div>
                 </form>
