@@ -1,7 +1,9 @@
 
 import './App.scss';
 import Header from './components/Header/Header';
-import VideoSection from './components/VideoSection/VideoSection';
+import VideoPlayer from './components/VideoPlayer/VideoPlayer';
+import VideoDescription from './components/VideoDescription/VideoDescription';
+import CommentSection from './components/CommentSection/CommentSection';
 import VideoList from './components/VideoList/VideoList';
 import videoInfo from './data/videos.json';
 import videoDetail from './data/video-details.json';
@@ -27,7 +29,11 @@ class App extends Component {
       <>
       <Header />
       <main>
-        <VideoSection selectVideo={this.state.selectedVideo}/>
+        <VideoPlayer 
+        image={this.state.selectedVideo.image}
+        video={this.state.selectedVideo.video}/>
+        <VideoDescription selectVideo={this.state.selectedVideo}/>
+        <CommentSection selectComment={this.state.selectedVideo.comments} />
         <VideoList 
         videoInfo={videoList}
         handleVideoSelect={this.handleVideoSelect}

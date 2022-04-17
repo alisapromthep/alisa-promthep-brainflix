@@ -1,9 +1,10 @@
 import './VideoDescription.scss';
-import videoDetail from '../../data/video-details.json';
 import viewsIcon from '../../assets/images/icons/views.svg';
 import likesIcon from '../../assets/images/icons/likes.svg';
+import { convertTimeStamp } from '../../DateTimeFunction';
 
-function VideoDescription ({title, channel, timestamp, views, likes, description}) {
+function VideoDescription ({selectVideo}) {
+    const {title, channel, timestamp, views, likes, description} = selectVideo
 
     return (
         <>
@@ -12,7 +13,7 @@ function VideoDescription ({title, channel, timestamp, views, likes, description
             <div className='channelinfo__container'>
                 <div className='channelinfo__left'>
                     <p className='channelinfo__detail channelinfo__detail--bold'>By {channel}</p>
-                    <p className='channelinfo__detail'>{timestamp}</p>
+                    <p className='channelinfo__detail'>{convertTimeStamp(timestamp)}</p>
                 </div>
                 <div className='channelinfo__right'>
                     <div className='channelinfo__right-box'>

@@ -1,13 +1,13 @@
 import CommentForm from "../CommentForm/CommentForm";
 import CommentCard from "../CommentCard/CommentCard";
 import "./CommentSection.scss"
-function CommentSection({selectedComment}) {
+function CommentSection({selectComment}) {
 
 
     return (
         <div className="comment">
-            <CommentForm commentInfo={selectedComment}/>
-            {selectedComment.map((comment,index)=>{
+            <CommentForm commentInfo={selectComment}/>
+            {selectComment.map((comment,index)=>{
                 return (
                     <CommentCard 
                     key={index}
