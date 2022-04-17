@@ -9,9 +9,11 @@ function VideoPlayer(props) {
 
     return (
         <section className='videoplayer'>
+            <div className='videoplayer__container'>
             <video className='videoplayer__video' controls poster={image}>
                 <source src={video} type="video"/>
             </video>
+            </div>
             <VideoDescription 
             title={title}
             channel={channel}

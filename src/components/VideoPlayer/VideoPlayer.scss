@@ -2,9 +2,19 @@
 @use '../../styles/partials/color' as *;
 
 .videoplayer{
+    
+    &__container {
+        background-color: black;
+        display: flex;
+        justify-content: center;
+    }
 
     &__video {
         width: 100%;
+
+        @include desktop {
+            width: 70%;
+        }
     }
 
 }
