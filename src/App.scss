@@ -55,4 +55,19 @@ body {
   }
   
 }
+.container {
+  @include desktop {
+    display: flex;
+  }
+
+  &__aboutvideo {
+    @include desktop {
+      width: 65vw;
+    }
+  }
+
+
+
+}
+
 

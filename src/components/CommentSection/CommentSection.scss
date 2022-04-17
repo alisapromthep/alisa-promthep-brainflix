@@ -7,4 +7,8 @@
         @include tablet-padding;
         padding-top: 0;
     }
+
+    @include desktop {
+        padding-right: 0;
+    }
 }

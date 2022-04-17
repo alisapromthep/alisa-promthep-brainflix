@@ -32,12 +32,16 @@ class App extends Component {
         <VideoPlayer 
         image={this.state.selectedVideo.image}
         video={this.state.selectedVideo.video}/>
-        <VideoDescription selectVideo={this.state.selectedVideo}/>
-        <CommentSection selectComment={this.state.selectedVideo.comments} />
-        <VideoList 
-        videoInfo={videoList}
-        handleVideoSelect={this.handleVideoSelect}
-        />
+        <div className='container'>
+          <div className='container__aboutvideo'>
+            <VideoDescription selectVideo={this.state.selectedVideo}/>
+            <CommentSection selectComment={this.state.selectedVideo.comments} />
+          </div>
+          <VideoList 
+          videoInfo={videoList}
+          handleVideoSelect={this.handleVideoSelect}
+          />
+        </div> 
       </main>
       </>
     );

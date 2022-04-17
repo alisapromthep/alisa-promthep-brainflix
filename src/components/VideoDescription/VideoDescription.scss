@@ -9,6 +9,11 @@
         @include tablet-padding;
     }
 
+    @include desktop {
+        padding-right: 0;
+    }
+
+
     &__title { 
         font-weight: 500;
         padding-bottom: 1rem;
@@ -44,6 +49,11 @@
         @include tablet {
             @include align-horizontal;
             width: 25%;
+        }
+
+        @include desktop {
+            padding-right: 1.5rem;
+            width: 28%;
         }
 
         &-box {

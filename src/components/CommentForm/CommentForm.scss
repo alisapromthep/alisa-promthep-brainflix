@@ -24,6 +24,10 @@
             align-items: center;
             width: 100%;
         }
+
+        @include desktop {
+            padding-right: 1.5rem;
+        }
     }
 
     &__profile-img {

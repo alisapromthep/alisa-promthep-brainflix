@@ -1,0 +1,9 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/color' as *;
+
+.videolist {
+
+    &__container {
+        border-left: 1px solid $secondary_mercury;
+    }
+}
