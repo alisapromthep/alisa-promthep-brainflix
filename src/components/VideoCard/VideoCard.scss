@@ -4,13 +4,19 @@
 .card {
 
     display: flex;
+    justify-content: flex-start;
+    width: 18rem;
     height: 6rem;
     padding: 1rem 0;
 
     &__thumbnail {
         @include boxes-border;
         background-color: $secondary_mercury;
+        min-width: 35%;
+        object-fit: cover;
+        object-position: 100% center;
     }
+
     &__detail-container {
         margin-left: 1rem;
     }

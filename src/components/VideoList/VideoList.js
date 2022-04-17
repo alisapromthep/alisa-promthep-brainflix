@@ -6,7 +6,8 @@ function VideoList ({videoInfo, handleVideoSelect})
 {
 
     return (
-        <section className='videolist__container'>
+        <section className='videolist'>
+            <h2 className='videolist__title'>next videos</h2>
             {videoInfo.map((video)=>(
                 <VideoCard key ={video.id}
                 videoDetail={video}

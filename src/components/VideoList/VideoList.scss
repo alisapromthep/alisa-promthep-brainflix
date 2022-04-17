@@ -3,7 +3,16 @@
 
 .videolist {
 
-    &__container {
+    @include mobile-padding;
+    padding-top: 0;
+    
+    @include desktop {
         border-left: 1px solid $secondary_mercury;
+        padding-top: 1.5rem;
+    }
+
+    &__title {
+        text-transform: uppercase;
+        color: $primary-silver;
     }
 }

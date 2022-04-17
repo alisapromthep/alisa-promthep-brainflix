@@ -1,5 +1,4 @@
 import './VideoPlayer.scss';
-import VideoDescription from '../VideoDescription/VideoDescription';
 
 function VideoPlayer({image, video}) {
 
