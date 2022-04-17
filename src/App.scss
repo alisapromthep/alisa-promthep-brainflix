@@ -48,6 +48,7 @@ body {
 
   &__add-icon{
       @extend .button__upload-icon;
+      left: 0.2rem;
   }
   
 }

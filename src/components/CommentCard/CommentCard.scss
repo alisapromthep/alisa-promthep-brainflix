@@ -16,6 +16,12 @@
             @include divider;
             border-bottom: none;
         }
+
+        &--desktop {
+            @include desktop {
+                border: none;
+            }
+        }
     }
 
     &__photo-holder {

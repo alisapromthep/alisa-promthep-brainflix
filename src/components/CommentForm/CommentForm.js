@@ -7,7 +7,7 @@ function CommentForm({commentInfo}) {
     return (
         <>
             <p className='comment__number'>{commentInfo.length} Comments</p>
-            <div className='comment__container'>
+            <div className='comment__container comment__container--desktop'>
                 <img className='comment__profile-img' src={mohanLogo} alt='mohan profile'/>
                 <form className='comment__form'>
                     <label className='comment__label'>
