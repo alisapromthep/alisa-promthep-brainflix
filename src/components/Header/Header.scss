@@ -16,11 +16,11 @@
 
     @include tablet {
         flex-direction: row;
-        @include tablet-padding;
+        padding: 1rem 2rem;
     }
 
     @include desktop {
-        justify-content: center;
+        justify-content: space-evenly;
         @include mobile-padding;
     }
 

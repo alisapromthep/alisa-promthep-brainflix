@@ -11,6 +11,11 @@
         @include tablet {
             padding: 1rem 0;
         }
+
+        @include desktop {
+            @include divider;
+            border-bottom: none;
+        }
     }
 
     &__photo-holder {
