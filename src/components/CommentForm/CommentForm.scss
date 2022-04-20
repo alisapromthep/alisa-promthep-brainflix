@@ -36,11 +36,7 @@
     }
 
     &__label {
-        color: $primary_silver;
-        text-transform: uppercase;
-        font-size: 0.7rem;
-        font-weight: 700;
-        margin-bottom: 1rem;
+        @include form-label-format;
 
         @include tablet {
             flex-grow: 1;
@@ -48,14 +44,10 @@
     }
 
     &__input {
-        border-radius: 4px;
-        padding: 0.75rem;
-        width: 100%;
-        height: 6rem;
-        background-color: $secondary_alabaster;
-        border: 1px solid $secondary_mercury;
-        font-family: "AvenirNext LT Pro";
-        margin-top: 0.5rem;
+        @include form-input-format;
+        @include form-input-large;
+        
+
 
         @include tablet {
             height: 2.5rem;

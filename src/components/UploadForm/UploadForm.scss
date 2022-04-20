@@ -1,0 +1,19 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/color' as *;
+
+.uploadform {
+
+
+    &__label {
+        @include form-label-format;
+    }
+
+    &__input {
+        @include form-input-format;
+
+        &--large {
+            @include form-input-large;
+        }
+    }
+
+}

@@ -1,16 +1,20 @@
 import React from 'react';
+import './UploadForm.scss';
 
 function UploadForm(props) {
     return (
-        <main className='upload'>
-            <h1> Upload Video </h1>
-            <div className='upload__thumbnail-container'>
-                <p> video thumbnail </p>
-                <img/>
-            </div>
+        <form className='uploadform'>
+            <label className='uploadform__label'>
+                title your video
+                <input className='uploadform__input' type='text' />
+            </label>
+            <label className='uploadform__label'>
+                add a video description
+                <textarea className='uploadform__input uploadform__input--large' type='text' />
+            </label>
 
             
-        </main>
+        </form>
     );
 }
 

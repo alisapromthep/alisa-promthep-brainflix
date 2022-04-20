@@ -60,3 +60,25 @@
     border-bottom: 1px solid $secondary_mercury;
     
 }
+
+@mixin form-label-format {
+    color: $primary_silver;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+@mixin form-input-format {
+    border-radius: 4px;
+    padding: 0.75rem;
+    background-color: $secondary_alabaster;
+    border: 1px solid $secondary_mercury;
+    font-family: "AvenirNext LT Pro";
+    margin-top: 0.5rem;
+}
+
+@mixin form-input-large {
+    width: 100%;
+    height: 6rem;
+}
