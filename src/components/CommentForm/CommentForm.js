@@ -1,6 +1,6 @@
 import './CommentForm.scss';
 import mohanLogo from '../../assets/images/Mohan-muruge.jpg';
-import addComment from '../../assets/images/icons/add_comment.svg';
+import addComment from '../../assets/icons/add_comment.svg';
 
 function CommentForm({commentInfo}) {
 

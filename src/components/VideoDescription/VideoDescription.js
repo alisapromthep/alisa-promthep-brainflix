@@ -1,6 +1,6 @@
 import './VideoDescription.scss';
-import viewsIcon from '../../assets/images/icons/views.svg';
-import likesIcon from '../../assets/images/icons/likes.svg';
+import viewsIcon from '../../assets/icons/views.svg';
+import likesIcon from '../../assets/icons/likes.svg';
 import { convertTimeStamp } from '../../DateTimeFunction';
 
 function VideoDescription ({selectVideo}) {

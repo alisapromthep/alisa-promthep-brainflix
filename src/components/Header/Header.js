@@ -1,8 +1,8 @@
 import './Header.scss';
-import brainflixLogo from '../../assets/images/logo/BrainFlix-logo.svg';
-import searchLogo from '../../assets/images/icons/search.svg';
+import brainflixLogo from '../../assets/logo/BrainFlix-logo.svg';
+import searchLogo from '../../assets/icons/search.svg';
 import mohanLogo from '../../assets/images/Mohan-muruge.jpg';
-import uploadLogo from '../../assets/images/icons/upload.svg';
+import uploadLogo from '../../assets/icons/upload.svg';
 
 
 function Header() {
