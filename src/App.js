@@ -8,6 +8,7 @@ import VideoList from './components/VideoList/VideoList';
 import videoInfo from './data/videos.json';
 import videoDetail from './data/video-details.json';
 import React, { Component } from 'react';
+import {BrowserRouter} from 'react-router-dom';
 
 class App extends Component {
 
@@ -26,7 +27,7 @@ class App extends Component {
     const videoList = this.state.videos.filter((video)=> {return video.id !== this.state.selectedVideo.id});
 
     return (
-      <>
+      <BrowserRouter>
       <Header />
       <main>
         <VideoPlayer 
@@ -43,7 +44,7 @@ class App extends Component {
           />
         </div> 
       </main>
-      </>
+      </BrowserRouter>
     );
   }
 }
