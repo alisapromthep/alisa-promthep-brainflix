@@ -2,10 +2,12 @@
 @use '../../styles/partials/color' as *;
 
 .uploadform {
-
+    @include flex-column;
+    margin: 1rem 0;
 
     &__label {
-        @include form-label-format;
+        @include label-format;
+        @include flex-column;
     }
 
     &__input {

@@ -36,7 +36,7 @@
     }
 
     &__label {
-        @include form-label-format;
+        @include label-format;
 
         @include tablet {
             flex-grow: 1;

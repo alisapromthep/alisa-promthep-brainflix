@@ -17,6 +17,13 @@ body {
   color: $primary_white;
   text-transform: uppercase;
   font-size: .75rem;
+
+  &--white {
+    color: $primary_brainflix-blue;
+    padding: 0.5rem;
+    margin: 1rem 0;
+
+  }
   
   &__container{
     @include button-reset;
@@ -38,7 +45,9 @@ body {
       width: 17%;
     }
 
+
   }
+
 
   &__upload-icon {
       width: 1.2rem;
@@ -50,6 +59,11 @@ body {
       @extend .button__upload-icon;
       left: 0.2rem;
   }
+
+  &__publish-icon {
+    @extend .button__upload-icon;
+  }
+
   
 }
 .container {
