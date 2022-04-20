@@ -2,7 +2,6 @@
 @use '../../styles/partials/color' as *;
 
 .upload {
-
     @include mobile-padding;
     @include divider;
     border-bottom: none;
@@ -10,18 +9,6 @@
     &__header {
         margin: 1rem 0;
     }
-    
-    &__thumbnail {
-
-        &-label {
-            @include label-format;
-            margin-bottom: 0.5rem; 
-        }
-
-        &-img {
-            width: 100%;
-            border-radius: 4px;
-
-        }
-    }
 }
+
+

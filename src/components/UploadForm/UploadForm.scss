@@ -1,6 +1,58 @@
 @use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/color' as *;
 
+.upload {
+
+    @include mobile-padding;
+    @include divider;
+    border-bottom: none;
+    
+    &__thumbnail {
+
+        &-label {
+            @include label-format;
+            margin-bottom: 0.5rem;
+            
+            @include tablet {
+                @include divider;
+                border-bottom: none;
+                padding-top: 1.5rem;
+            }
+        }
+
+        &-img {
+            width: 100%;
+            border-radius: 4px;
+
+            @include tablet {
+                width: 50%;
+            }
+
+        }
+    }
+}
+.upload {
+
+    
+    &__thumbnail {
+
+        &-label {
+            @include label-format;
+            margin-bottom: 0.5rem; 
+        }
+
+        &-img {
+            width: 100%;
+            border-radius: 4px;
+
+            @include tablet {
+                width: 50%;
+            }
+
+        }
+    }
+}
+
 .uploadform {
     @include flex-column;
     margin: 1rem 0;
@@ -18,4 +70,17 @@
         }
     }
 
+    &__button-container {
+
+        @include tablet {
+            @include divider;
+            border-bottom: none;
+            padding-top: 1.5rem;
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: end;
+            aligh-items: center;
+
+        }
+    }
 }
