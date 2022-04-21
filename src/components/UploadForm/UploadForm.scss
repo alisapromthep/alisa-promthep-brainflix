@@ -11,15 +11,12 @@
     
     &__thumbnail {
 
+        &-container {
+            @include flex-column;
+        }
+
         &-label {
             @include label-format;
-            margin-bottom: 0.5rem;
-            
-            @include tablet {
-                @include divider;
-                border-bottom: none;
-                padding-top: 1.5rem;
-            }
         }
 
         &-img {
@@ -29,7 +26,6 @@
             @include tablet {
                 width: 50%;
             }
-
         }
     }
 }
@@ -37,6 +33,10 @@
 .uploadform {
     @include flex-column;
     margin: 1rem 0;
+
+    @include desktop {
+        margin: 0;
+    }
 
     &__label {
         @include label-format;
