@@ -6,6 +6,11 @@
     @include divider;
     border-bottom: none;
 
+    @include tablet {
+        @include tablet-padding; 
+
+    }
+
     &__header {
         margin: 1rem 0;
     }

@@ -6,7 +6,7 @@ import UploadPreview from '../../assets/images/Upload-video-preview.jpg';
 function UploadForm(props) {
 
     return (
-        <>
+        <div className='upload__container'>
             <div className='upload__thumbnail-container'>
                 <p className='upload__thumbnail-label'> video thumbnail </p>
                 <img className='upload__thumbnail-img' src={UploadPreview} alt='first person view of a biker looking down'/>
@@ -28,7 +28,7 @@ function UploadForm(props) {
                     <button className='button button--white'>cancel</button>
                 </div>
             </form>
-        </>
+        </div>
     );
 }
 

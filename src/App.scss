@@ -21,7 +21,9 @@ body {
   &--white {
     color: $primary_brainflix-blue;
     padding: 0.5rem;
-    margin: 1rem 0;
+    width: 100%;
+    margin: 0;
+    border: 1px solid red;
 
     @include tablet {
       width: 20%;
@@ -85,9 +87,6 @@ body {
       width: 65vw;
     }
   }
-
-
-
 }
 
 

@@ -3,9 +3,11 @@
 
 .upload {
 
-    @include mobile-padding;
-    @include divider;
-    border-bottom: none;
+    &__container {
+        @include desktop {
+            display: flex;
+        }
+    }
     
     &__thumbnail {
 
@@ -18,27 +20,6 @@
                 border-bottom: none;
                 padding-top: 1.5rem;
             }
-        }
-
-        &-img {
-            width: 100%;
-            border-radius: 4px;
-
-            @include tablet {
-                width: 50%;
-            }
-
-        }
-    }
-}
-.upload {
-
-    
-    &__thumbnail {
-
-        &-label {
-            @include label-format;
-            margin-bottom: 0.5rem; 
         }
 
         &-img {
