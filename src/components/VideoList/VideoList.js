@@ -15,7 +15,6 @@ class VideoList extends Component {
         axios
             .get(`${API_URL}/videos${API_KEY}`)
             .then ((response)=>{
-            // console.log(response.data);
             const videoList = response.data;
 
             this.setState({
@@ -24,7 +23,24 @@ class VideoList extends Component {
         })
     }
 
+    componentDidUpdate(prevProps){
+        const oldVideoId = prevProps.selectVideoId; 
+        const newVideoId = this.props.selectVideoId;
+        
+        if (oldVideoId !== newVideoId){
+            
+            const filteredList = this.state.videoList.filter((video)=>{
+                return video.id !== this.props.selectVideoId
+            })
+    
+            this.setState({
+                videoList: filteredList
+            })
+        }
+    }
+
     render(){
+
         return (
             <section className='videolist'>
                 <h2 className='videolist__title'>next videos</h2>

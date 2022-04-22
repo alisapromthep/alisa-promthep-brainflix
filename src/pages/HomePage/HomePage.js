@@ -22,8 +22,6 @@ class HomePage extends Component {
     axios
     .get(`${API_URL}/videos/${firstVideoId}${API_KEY}`)
     .then((response)=>{
-      console.log(response.data)
-
       this.setState({
         selectedVideo: response.data,
       })
@@ -36,8 +34,6 @@ class HomePage extends Component {
     axios
       .get(`${API_URL}/videos/${selectedVideoId}${API_KEY}`)
       .then((response)=>{
-        console.log(response.data)
-
         this.setState({
           selectedVideo: response.data,
         })
@@ -64,7 +60,7 @@ class HomePage extends Component {
                     <VideoDescription selectVideo={this.state.selectedVideo}/>
                     <CommentSection selectComment={this.state.selectedVideo.comments} />
                 </div>
-                <VideoList />
+                <VideoList selectVideoId={this.state.selectedVideo.id}/>
                 </div> 
             </main>
         );
