@@ -15,7 +15,7 @@ class VideoList extends Component {
         axios
             .get(`${API_URL}/videos${API_KEY}`)
             .then ((response)=>{
-            console.log(response.data);
+            // console.log(response.data);
             const videoList = response.data;
 
             this.setState({
