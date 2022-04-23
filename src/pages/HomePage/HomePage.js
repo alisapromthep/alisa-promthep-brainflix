@@ -7,38 +7,58 @@ import axios from 'axios';
 
 
 
-export const API_KEY = '?api_key=10cbdeeb-a108-46a6-822b-6a208b9efaee';
-export const API_URL = 'https://project-2-api.herokuapp.com';
+const API_KEY = '?api_key=10cbdeeb-a108-46a6-822b-6a208b9efaee';
+const API_URL = 'https://project-2-api.herokuapp.com';
 
 class HomePage extends Component {
 
   state = {
+    videoList: null,
     selectedVideo: null,
   };
 
+  //function fetching movie from the api using movieId 
+
+  getMovieDetails = (movieId) => {
+    axios
+      .get(`${API_URL}/videos/${movieId}${API_KEY}`)
+      .then((response)=>{
+        console.log(response.data)
+        this.setState({ selectedVideo: response.data})
+      })
+    
+  }
+
+
   componentDidMount(){
-    const firstVideoId = `84e96018-4022-434e-80bf-000ce4cd12b8`;
 
     axios
-    .get(`${API_URL}/videos/${firstVideoId}${API_KEY}`)
-    .then((response)=>{
-      this.setState({
-        selectedVideo: response.data,
+      .get(`${API_URL}/videos${API_KEY}`)
+      .then((response)=>{
+        const videoList = response.data;
+        //get video information array, then set state 
+
+        this.setState({
+          videoList: videoList,
+        })
+
+        //return the first video in the array
+        //so that the homepage is always showing the first video when arrive/come back to homepage 
+
+        return videoList[0].id;
       })
-    })
+      //chaining promise, .then take the return value from previous axios request 
+      //nameing the videoList[0].id = firstVideoId to use in the next request 
+      .then ((firstVideoId)=>{
+        //calling function to make axios request, passing in the Video Id as parameter. 
+        //function also set state for selected videoDetails 
+        this.getMovieDetails(firstVideoId)
+      })
   }
 
   componentDidUpdate() {
     const selectedVideoId = this.props.match.params.videoId;
-
-    axios
-      .get(`${API_URL}/videos/${selectedVideoId}${API_KEY}`)
-      .then((response)=>{
-        this.setState({
-          selectedVideo: response.data,
-        })
-      })
-
+    this.getMovieDetails(selectedVideoId);
   }
 
     render() {
@@ -46,6 +66,12 @@ class HomePage extends Component {
       if (!this.state.selectedVideo) {
         return (
           <p>Loading Please Wait</p>
+        )
+      }
+
+      if (!this.state.videoList) {
+        return (
+          <p>Loading Please Wait </p>
         )
       }
 
@@ -60,7 +86,7 @@ class HomePage extends Component {
                     <VideoDescription selectVideo={this.state.selectedVideo}/>
                     <CommentSection selectComment={this.state.selectedVideo.comments} />
                 </div>
-                <VideoList selectVideoId={this.state.selectedVideo.id}/>
+                <VideoList videoArray={this.state.videoList}/>
                 </div> 
             </main>
         );

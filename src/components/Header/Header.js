@@ -18,7 +18,7 @@ function Header() {
                     <img className='header__search-img' src={mohanLogo} alt='mohan profile'/>
                 </div>
                 <div className='button__container'>
-                    <Link to='./upload'>
+                    <Link to='/upload'>
                         <img className='button__upload-icon' src={uploadLogo} alt='arrow pointing up for upload' />
                         <button className='button'>upload</button>
                     </Link>
