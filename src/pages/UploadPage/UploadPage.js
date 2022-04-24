@@ -12,7 +12,8 @@ class UploadPage extends Component {
     }
 
 
-    handleFormSubmit= () => {
+    handleFormSubmit= (event) => {
+        event.preventDefault();
 
         this.setState ({
             isFormSubmit: true,

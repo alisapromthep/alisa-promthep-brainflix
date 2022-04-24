@@ -8,11 +8,8 @@ import UploadPreview from '../../assets/images/Upload-video-preview.jpg';
 function UploadForm({handleFormSubmit}) {
 
     const handleSubmit = (event)=>{
-        event.preventDefault();
-        handleFormSubmit();
-
+        handleFormSubmit(event);
     }
-
 
     return (
         <form 
