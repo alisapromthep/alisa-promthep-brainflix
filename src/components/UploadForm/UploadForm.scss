@@ -1,26 +1,37 @@
 @use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/color' as *;
 
-.upload {
+
+.uploadform {
 
     &__container {
+
         @include desktop {
             display: flex;
+            justify-content: center;
+            align-items: baseline;
+            margin-bottom: 1.5rem;
         }
+
     }
     
+
+
     &__thumbnail {
 
         &-container {
             @include flex-column;
+            margin-bottom: 1rem;
 
             @include desktop {
-                margin-right: 1.5rem;
+                margin: 0 1.5rem 0 0;
+                width: 60%;
             }
         }
 
         &-label {
             @include label-format;
+            margin-bottom: 0.5rem;
         }
 
         &-img {
@@ -36,20 +47,25 @@
             }
         }
     }
-}
 
-.uploadform {
-    @include flex-column;
-    margin: 1rem 0;
+    &__input-container {
+        @include flex-column;
+        margin: 1rem 0;
 
-    @include desktop {
-        margin: 0;
-        width: 100%;
+        @include desktop {
+            margin: 0;
+            width: 100%;
+        }
+
     }
 
     &__label {
         @include label-format;
         @include flex-column;
+
+        @include desktop {
+            margin-bottom: 1.5rem;
+        }
     }
 
     &__input {
