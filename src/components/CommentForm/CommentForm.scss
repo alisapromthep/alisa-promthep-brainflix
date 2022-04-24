@@ -46,6 +46,7 @@
     &__input {
         @include form-input-format;
         @include form-input-large;
+        resize: none;
         
 
 
