@@ -6,7 +6,6 @@ import VideoList from '../../components/VideoList/VideoList';
 import axios from 'axios';
 
 
-
 const API_KEY = '?api_key=10cbdeeb-a108-46a6-822b-6a208b9efaee';
 const API_URL = 'https://project-2-api.herokuapp.com';
 
@@ -23,7 +22,6 @@ class HomePage extends Component {
     axios
       .get(`${API_URL}/videos/${movieId}${API_KEY}`)
       .then((response)=>{
-        console.log(response.data)
         this.setState({ selectedVideo: response.data})
       })
     
@@ -56,9 +54,17 @@ class HomePage extends Component {
       })
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps) {
     const selectedVideoId = this.props.match.params.videoId;
-    this.getMovieDetails(selectedVideoId);
+    const firstVideoId = this.state.videoList[0].id;
+
+    //check that the selected vido Id has changed 
+    if (selectedVideoId !== prevProps.match.params.videoId) {
+
+      //if undefined, go back to first Video 
+      selectedVideoId == undefined ? 
+      this.getMovieDetails(firstVideoId) : this.getMovieDetails(selectedVideoId)
+    }
   }
 
     render() {
