@@ -92,7 +92,11 @@ class HomePage extends Component {
                     <VideoDescription selectVideo={this.state.selectedVideo}/>
                     <CommentSection selectComment={this.state.selectedVideo.comments} />
                 </div>
-                <VideoList videoArray={this.state.videoList}/>
+                <VideoList 
+                videoArray={this.state.videoList}
+                selectedVideoId={this.state.selectedVideo.id}
+                />
+                
                 </div> 
             </main>
         );

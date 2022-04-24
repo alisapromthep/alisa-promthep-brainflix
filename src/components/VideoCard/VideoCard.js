@@ -2,7 +2,7 @@ import './VideoCard.scss';
 
 
 
-function VideoCard({videoDetail, onVideoSelect}) {
+function VideoCard({videoDetail, onVideoSelect, key}) {
 
     return (
         <article className='card'>
