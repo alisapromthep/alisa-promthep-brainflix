@@ -47,6 +47,8 @@
         @include form-input-format;
         @include form-input-large;
         resize: none;
+        overflow: hidden;
+        outline-color: $primary_brainflix-blue;
         
 
 

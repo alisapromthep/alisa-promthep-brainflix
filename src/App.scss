@@ -17,6 +17,7 @@ body {
   color: $primary_white;
   text-transform: uppercase;
   font-size: .75rem;
+  cursor: pointer;
 
   &--white {
     color: $primary_brainflix-blue;
@@ -40,6 +41,7 @@ body {
     display: flex;
     justify-content: center;
     position: relative;
+    cursor: pointer;
 
     @include tablet {
         width: 20%;

@@ -15,11 +15,8 @@
         @include desktop {
             @include divider;
             border-bottom: none;
-        }
-
-        &--desktop {
-            @include desktop {
-                border: none;
+            &:last-child {
+                border-bottom: none;
             }
         }
     }

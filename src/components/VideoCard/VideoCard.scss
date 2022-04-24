@@ -8,6 +8,9 @@
     width: 18rem;
     height: 6rem;
     padding: 1rem 0;
+    cursor: pointer;
+
+    
 
     &__thumbnail {
         @include boxes-border;
