@@ -1,0 +1,19 @@
+@use '../../styles/partials/color' as *;
+@use '../../styles/partials/mixins' as *;
+
+
+.container {
+
+    @include desktop {
+
+        @include desktop-padding;
+        display: flex;
+        justify-content: center;
+    }
+    
+    &__aboutvideo {
+        @include desktop {
+        width: 65vw;
+        }
+    }
+}

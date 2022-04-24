@@ -33,7 +33,7 @@ body {
   
   &__container{
     @include button-reset;
-    @include boxes-border;
+    border-radius: 4px;
     background-color: $primary_brainflix-blue;
     width: 100%;
     padding: 0.5rem;
@@ -74,20 +74,6 @@ body {
     @extend .button__upload-icon;
   }
 
-  
-}
-.container {
-  @include desktop {
-    display: flex;
-    justify-content: center;
-    padding: 1rem 3rem;
-  }
-
-  &__aboutvideo {
-    @include desktop {
-      width: 65vw;
-    }
-  }
 }
 
 

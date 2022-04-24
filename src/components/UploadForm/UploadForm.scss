@@ -6,11 +6,16 @@
 
     &__container {
 
+        @include tablet {
+            @include divider;
+            padding: 1rem 0;
+        }
+
         @include desktop {
             display: flex;
             justify-content: center;
             align-items: baseline;
-            margin-bottom: 1.5rem;
+            padding: 1.5rem 0;
         }
 
     }
@@ -24,8 +29,8 @@
             margin-bottom: 1rem;
 
             @include desktop {
-                margin: 0 1.5rem 0 0;
-                width: 60%;
+                width: 50%;
+                margin-right: 1.5rem;
             }
         }
 
@@ -50,7 +55,6 @@
 
     &__input-container {
         @include flex-column;
-        margin: 1rem 0;
 
         @include desktop {
             margin: 0;
@@ -79,8 +83,6 @@
     &__button-container {
 
         @include tablet {
-            @include divider;
-            border-bottom: none;
             padding-top: 1.5rem;
             display: flex;
             flex-direction: row-reverse;

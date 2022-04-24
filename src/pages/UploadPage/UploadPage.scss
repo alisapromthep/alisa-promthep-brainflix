@@ -8,17 +8,14 @@
 
     @include tablet {
         @include tablet-padding; 
+    }
 
+    @include desktop {
+        padding: 1rem 6.5rem;
     }
 
     &__header {
         padding: 1rem 0;
-
-        @include tablet {
-            @include divider;
-            border-top: none;
-            margin-bottom: 1.5rem;
-        }
     }
 }
 

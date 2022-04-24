@@ -20,6 +20,11 @@
     padding: 2rem;
 }
 
+@mixin desktop-padding {
+    padding: 1rem 3rem;
+}
+
+
 @mixin flex-column {
     display: flex;
     flex-direction: column;

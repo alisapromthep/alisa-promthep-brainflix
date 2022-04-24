@@ -1,3 +1,4 @@
+import './HomePage.scss'
 import React, { Component } from 'react';
 import VideoPlayer from '../../components/VideoPlayer/VideoPlayer';
 import VideoDescription from '../../components/VideoDescription/VideoDescription';

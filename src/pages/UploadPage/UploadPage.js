@@ -2,7 +2,6 @@ import React from 'react';
 import './UploadPage.scss';
 import UploadForm from '../../components/UploadForm/UploadForm';
 import {Component} from 'react';
-import {Redirect} from 'react-router-dom';
 import UploadComplete from '../../components/UploadComplete/UploadComplete';
 
 
