@@ -4,13 +4,16 @@
 .uploadcomplete {
 
     &__container {
+        @include divider;
         @include flex-column;
         align-items: center;
-        margin: 1rem 0;
+        padding: 1rem;
+        border-bottom: none;
     }
 
     &__text {
-        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        margin: 1rem 0;
     }
 
 }
