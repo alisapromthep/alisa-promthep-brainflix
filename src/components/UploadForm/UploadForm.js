@@ -3,7 +3,16 @@ import './UploadForm.scss';
 import publish from '../../assets/icons/publish.svg';
 import UploadPreview from '../../assets/images/Upload-video-preview.jpg';
 
-function UploadForm(props) {
+
+
+function UploadForm({handleFormSubmit}) {
+
+    const handleSubmit = (event)=>{
+        event.preventDefault();
+        handleFormSubmit();
+
+    }
+
 
     return (
         <div className='upload__container'>
@@ -11,7 +20,9 @@ function UploadForm(props) {
                 <p className='upload__thumbnail-label'> video thumbnail </p>
                 <img className='upload__thumbnail-img' src={UploadPreview} alt='first person view of a biker looking down'/>
             </div>
-            <form className='uploadform'>
+            <form 
+            onSubmit={handleFormSubmit}
+            className='uploadform'>
                 <label className='uploadform__label'>
                     title your video
                     <input className='uploadform__input' type='text' placeholder='Add a title to your video' name='title' />
@@ -23,9 +34,9 @@ function UploadForm(props) {
                 <div className='uploadform__button-container'>
                     <div className='button__container'>
                         <img className='button__publish-icon' src={publish} alt='arrow up'/>
-                        <button className='button'>publish</button>
+                        <button type='submit' className='button'>publish</button>
                     </div>
-                    <button className='button button--white'>cancel</button>
+                    <button type='button' className='button button--white'>cancel</button>
                 </div>
             </form>
         </div>

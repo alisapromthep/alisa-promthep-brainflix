@@ -1,5 +1,5 @@
 import './CommentCard.scss';
-import { convertTimeStamp } from '../../DateTimeFunction';
+import { convertTimeStamp } from '../../Utility/DateTimeFunction';
 
 function CommentCard ({name, timestamp, comment}){
     return (

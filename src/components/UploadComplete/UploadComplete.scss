@@ -1,0 +1,16 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/color' as *;
+
+.uploadcomplete {
+
+    &__container {
+        @include flex-column;
+        align-items: center;
+        margin: 1rem 0;
+    }
+
+    &__text {
+        margin-bottom: 1rem;
+    }
+
+}

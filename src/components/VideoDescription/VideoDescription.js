@@ -1,7 +1,7 @@
 import './VideoDescription.scss';
 import viewsIcon from '../../assets/icons/views.svg';
 import likesIcon from '../../assets/icons/likes.svg';
-import { convertTimeStamp } from '../../DateTimeFunction';
+import { convertTimeStamp } from '../../Utility/DateTimeFunction';
 
 function VideoDescription ({selectVideo}) {
     const {title, channel, timestamp, views, likes, description} = selectVideo

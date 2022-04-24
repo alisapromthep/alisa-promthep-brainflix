@@ -29,8 +29,6 @@ body {
       height: 2.5rem;
       margin: 0;
     }
-
-
   }
   
   &__container{
@@ -52,6 +50,10 @@ body {
     @include desktop {
       width: 17%;
     }
+
+  &--small {
+    width: 30%;
+  }
 
 
   }
