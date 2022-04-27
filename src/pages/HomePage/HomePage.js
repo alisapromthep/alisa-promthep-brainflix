@@ -7,8 +7,10 @@ import VideoList from '../../components/VideoList/VideoList';
 import axios from 'axios';
 
 
-const API_KEY = '?api_key=10cbdeeb-a108-46a6-822b-6a208b9efaee';
-const API_URL = 'https://project-2-api.herokuapp.com';
+// const API_KEY = '?api_key=10cbdeeb-a108-46a6-822b-6a208b9efaee';
+// const API_URL = 'https://project-2-api.herokuapp.com';
+
+const API_URL = 'http://localhost:8080'; 
 
 class HomePage extends Component {
 
@@ -21,7 +23,7 @@ class HomePage extends Component {
 
   getMovieDetails = (movieId) => {
     axios
-      .get(`${API_URL}/videos/${movieId}${API_KEY}`)
+      .get(`${API_URL}/videos/${movieId}`)
       .then((response)=>{
         this.setState({ selectedVideo: response.data})
       })
@@ -32,7 +34,7 @@ class HomePage extends Component {
   componentDidMount(){
 
     axios
-      .get(`${API_URL}/videos${API_KEY}`)
+      .get(`${API_URL}/videos/`)
       .then((response)=>{
         const videoList = response.data;
         //get video information array, then set state 
