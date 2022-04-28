@@ -1,4 +1,4 @@
-import './HomePage.scss'
+import './HomePage1.scss'
 import React, { Component } from 'react';
 import VideoPlayer from '../../components/VideoPlayer/VideoPlayer';
 import VideoDescription from '../../components/VideoDescription/VideoDescription';
@@ -6,9 +6,6 @@ import CommentSection from '../../components/CommentSection/CommentSection';
 import VideoList from '../../components/VideoList/VideoList';
 import axios from 'axios';
 
-
-// const API_KEY = '?api_key=10cbdeeb-a108-46a6-822b-6a208b9efaee';
-// const API_URL = 'https://project-2-api.herokuapp.com';
 
 const API_URL = 'http://localhost:8080'; 
 
