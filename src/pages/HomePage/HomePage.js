@@ -12,8 +12,8 @@ const API_URL = 'http://localhost:8080';
 class HomePage extends Component {
 
   state = {
-    videoList: null,
-    selectedVideo: null,
+    videoList: [],
+    selectedVideo: [],
   };
 
   //function fetching movie from the api using movieId 
