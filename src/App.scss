@@ -19,6 +19,11 @@ body {
   font-size: .75rem;
   cursor: pointer;
 
+  &--like {
+    @include button-reset;
+    cursor: pointer;
+  }
+
   &--white {
     color: $primary_brainflix-blue;
     padding: 0.5rem;
@@ -30,6 +35,7 @@ body {
       height: 2.5rem;
       margin: 0;
     }
+
   }
   
   &__container{
@@ -42,6 +48,10 @@ body {
     justify-content: center;
     position: relative;
     cursor: pointer;
+
+    &:hover {
+      background-color: $secondary_brainflix-darkblue;
+    }
 
     @include tablet {
         width: 20%;

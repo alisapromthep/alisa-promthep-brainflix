@@ -1,27 +1,28 @@
-import './HomePage.scss'
+import './HomePage1.scss'
 import React, { Component } from 'react';
 import VideoPlayer from '../../components/VideoPlayer/VideoPlayer';
 import VideoDescription from '../../components/VideoDescription/VideoDescription';
 import CommentSection from '../../components/CommentSection/CommentSection';
 import VideoList from '../../components/VideoList/VideoList';
 import axios from 'axios';
+import {Helmet} from 'react-helmet';
 
 
-const API_KEY = '?api_key=10cbdeeb-a108-46a6-822b-6a208b9efaee';
-const API_URL = 'https://project-2-api.herokuapp.com';
+export const API_URL = 'http://localhost:8080'; 
+export const API_KEY = '?api_key=1hv9acdgbl2mt2obv'
 
 class HomePage extends Component {
 
   state = {
-    videoList: null,
-    selectedVideo: null,
+    videoList: [],
+    selectedVideo: [],
   };
 
-  //function fetching movie from the api using movieId 
+  //function fetching video from the api using videoId 
 
-  getMovieDetails = (movieId) => {
+  getVideoDetails = (videoId) => {
     axios
-      .get(`${API_URL}/videos/${movieId}${API_KEY}`)
+      .get(`${API_URL}/videos/${videoId}${API_KEY}`)
       .then((response)=>{
         this.setState({ selectedVideo: response.data})
       })
@@ -29,10 +30,32 @@ class HomePage extends Component {
   }
 
 
+  //function to add likes 
+
+  addLike = (event)=>{
+    event.preventDefault();
+
+    const likedVideoId = this.state.selectedVideo.id;
+
+    //make a put request 
+    axios
+      .put(`${API_URL}/videos/${likedVideoId}/likes${API_KEY}`)
+      .then((response)=>{
+
+        //then get update video detail 
+        this.getVideoDetails(likedVideoId)
+      })
+      .catch((error)=>{
+        console.log(`couldn't add like`)
+      })
+
+  }
+
+
   componentDidMount(){
 
     axios
-      .get(`${API_URL}/videos${API_KEY}`)
+      .get(`${API_URL}/videos/${API_KEY}`)
       .then((response)=>{
         const videoList = response.data;
         //get video information array, then set state 
@@ -51,7 +74,7 @@ class HomePage extends Component {
       .then ((firstVideoId)=>{
         //calling function to make axios request, passing in the Video Id as parameter. 
         //function also set state for selected videoDetails 
-        this.getMovieDetails(firstVideoId)
+        this.getVideoDetails(firstVideoId)
       })
   }
 
@@ -61,22 +84,25 @@ class HomePage extends Component {
 
     //check that the selected vido Id has changed 
     if (selectedVideoId !== prevProps.match.params.videoId) {
+      //scroll to the top when new video is click 
+      window.scrollTo(0,0);
 
       //if undefined, go back to first Video 
-      selectedVideoId == undefined ? 
-      this.getMovieDetails(firstVideoId) : this.getMovieDetails(selectedVideoId)
+      selectedVideoId === undefined ? 
+      this.getVideoDetails(firstVideoId) : this.getVideoDetails(selectedVideoId)
     }
+
   }
 
     render() {
 
-      if (!this.state.selectedVideo) {
+      if (this.state.selectedVideo.length === 0) {
         return (
           <p>Loading Please Wait</p>
         )
       }
 
-      if (!this.state.videoList) {
+      if (this.state.videoList.length === 0) {
         return (
           <p>Loading Please Wait </p>
         )
@@ -84,13 +110,18 @@ class HomePage extends Component {
 
         return (
             <main>
+              <Helmet>
+                <title>Brainflix | Home</title>
+              </Helmet>
                 <VideoPlayer 
                 image={this.state.selectedVideo.image}
                 video={this.state.selectedVideo.video}
                 />
                 <div className='container'>
                 <div className='container__aboutvideo'>
-                    <VideoDescription selectVideo={this.state.selectedVideo}/>
+                    <VideoDescription 
+                    selectVideo={this.state.selectedVideo}
+                    addLike={this.addLike}/>
                     <CommentSection selectComment={this.state.selectedVideo.comments} />
                 </div>
                 <VideoList 

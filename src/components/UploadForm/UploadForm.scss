@@ -20,8 +20,6 @@
 
     }
     
-
-
     &__thumbnail {
 
         &-container {
@@ -78,6 +76,10 @@
         &--large {
             @include form-input-large;
         }
+
+        &--error {
+            border-color: $error;
+        }
     }
 
     &__button-container {
@@ -86,7 +88,7 @@
             padding-top: 1.5rem;
             display: flex;
             flex-direction: row-reverse;
-            justify-content: end;
+            justify-content: flex-end;
             aligh-items: center;
 
         }
