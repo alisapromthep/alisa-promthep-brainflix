@@ -7,7 +7,7 @@ import VideoList from '../../components/VideoList/VideoList';
 import axios from 'axios';
 
 
-const API_URL = 'http://localhost:8080'; 
+export const API_URL = 'http://localhost:8080'; 
 
 class HomePage extends Component {
 
@@ -60,6 +60,8 @@ class HomePage extends Component {
 
     //check that the selected vido Id has changed 
     if (selectedVideoId !== prevProps.match.params.videoId) {
+      //scroll to the top when new video is click 
+      window.scrollTo(0,0);
 
       //if undefined, go back to first Video 
       selectedVideoId == undefined ? 

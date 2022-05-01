@@ -3,7 +3,8 @@ import './UploadPage.scss';
 import UploadForm from '../../components/UploadForm/UploadForm';
 import {Component} from 'react';
 import UploadComplete from '../../components/UploadComplete/UploadComplete';
-
+import axios from 'axios';
+import { API_URL } from '../HomePage/HomePage';
 
 class UploadPage extends Component {
 
@@ -15,9 +16,26 @@ class UploadPage extends Component {
     handleFormSubmit= (event) => {
         event.preventDefault();
 
-        this.setState ({
-            isFormSubmit: true,
-        })
+        console.log(event.target.title.value)
+        console.log(event.target.description.value)
+
+        const uploadTitle = event.target.title.value;
+        const uploadDescription = event.target.description.value;
+
+        axios
+            .post(`${API_URL}/videos/`, {
+                title: uploadTitle,
+                description: uploadDescription 
+            })
+            .then((response)=>{
+
+                //once post is complete, notify user
+                this.setState ({
+                    isFormSubmit: true,
+                })
+
+            })
+
 
     }
 
