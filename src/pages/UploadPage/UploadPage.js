@@ -11,14 +11,26 @@ import { API_URL, API_KEY } from '../HomePage/HomePage';
 class UploadPage extends Component {
 
     state = {
+        uploadTitle: '',
+        uploadDescription: '',
         isTitleFilled: true,
         isDescriptionFilled: true,
         isFormSubmit: false,
     }
 
-    isFormValid = (uploadTitle, uploadDescription) => {
+    handleChange = (event)=>{
+        this.setState({
+            [event.target.name]: event.target.value,
+        });
+    }
+    
+    handleFormSubmit= (event) => {
+        event.preventDefault();
+        
+        const uploadTitle = event.target.title.value;
+        const uploadDescription = event.target.description.value;
 
-        //check if title is filled 
+         //check if title is filled 
         if (!uploadTitle) {
             this.setState({
                 isTitleFilled: false,
@@ -33,35 +45,28 @@ class UploadPage extends Component {
             })
         }
 
-    }
-    
-    handleFormSubmit= (event) => {
-        event.preventDefault();
-        
-
-        const uploadTitle = event.target.title.value;
-        const uploadDescription = event.target.description.value;
-
-        if (!this.isFormValid(uploadTitle, uploadDescription)){
+        if (!uploadTitle || !uploadDescription){
             return alert(`Please fill out the missing information`)
+        } else {
+
+            axios
+                .post(`${API_URL}/videos/${API_KEY}`, {
+                    title: uploadTitle,
+                    description: uploadDescription 
+                })
+                .then((response)=>{
+    
+                    //once post is complete, notify user
+                    this.setState ({
+                        isFormSubmit: true,
+                    })
+    
+                })
+                .catch((error)=>{
+                    console.log(`error posting`)
+                })
         }
 
-        axios
-            .post(`${API_URL}/videos/${API_KEY}`, {
-                title: uploadTitle,
-                description: uploadDescription 
-            })
-            .then((response)=>{
-
-                //once post is complete, notify user
-                this.setState ({
-                    isFormSubmit: true,
-                })
-
-            })
-            .catch((error)=>{
-                console.log(`error posting`)
-            })
 
 
     }

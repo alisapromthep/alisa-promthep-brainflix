@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 
 
 
-function UploadForm({handleFormSubmit, isTitleFilled, isDescriptionFilled}) {
+function UploadForm({handleFormSubmit,handleChange , isTitleFilled, isDescriptionFilled}) {
 
 
     return (
@@ -27,7 +27,8 @@ function UploadForm({handleFormSubmit, isTitleFilled, isDescriptionFilled}) {
                     `} 
                     type='text' 
                     placeholder='Add a title to your video' 
-                    name='title' />
+                    name='title'
+                    onChange={handleChange} />
                 </label>
                 <label className='uploadform__label'>
                     add a video description
@@ -36,7 +37,8 @@ function UploadForm({handleFormSubmit, isTitleFilled, isDescriptionFilled}) {
                     ${!isDescriptionFilled ? 'uploadform__input--error':''}
                     `}
                     type='text' 
-                    placeholder='Add a description to your video' name='description'/>
+                    placeholder='Add a description to your video' name='description'
+                    onChange={handleChange}/>
                 </label>
             </div>
         </div>
