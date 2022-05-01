@@ -14,7 +14,6 @@ class UploadPage extends Component {
         isFormSubmit: false,
     }
 
-
     handleFormSubmit= (event) => {
         event.preventDefault();
 

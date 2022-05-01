@@ -43,6 +43,10 @@ body {
     position: relative;
     cursor: pointer;
 
+    &:hover {
+      background-color: $secondary_brainflix-darkblue;
+    }
+
     @include tablet {
         width: 20%;
         height: 2.5rem;
