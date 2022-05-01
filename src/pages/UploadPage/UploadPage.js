@@ -16,9 +16,6 @@ class UploadPage extends Component {
     handleFormSubmit= (event) => {
         event.preventDefault();
 
-        console.log(event.target.title.value)
-        console.log(event.target.description.value)
-
         const uploadTitle = event.target.title.value;
         const uploadDescription = event.target.description.value;
 
