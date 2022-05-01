@@ -5,6 +5,7 @@ import VideoDescription from '../../components/VideoDescription/VideoDescription
 import CommentSection from '../../components/CommentSection/CommentSection';
 import VideoList from '../../components/VideoList/VideoList';
 import axios from 'axios';
+import {Helmet} from 'react-helmet';
 
 
 export const API_URL = 'http://localhost:8080'; 
@@ -86,6 +87,9 @@ class HomePage extends Component {
 
         return (
             <main>
+              <Helmet>
+                <title>Brainflix | Home</title>
+              </Helmet>
                 <VideoPlayer 
                 image={this.state.selectedVideo.image}
                 video={this.state.selectedVideo.video}

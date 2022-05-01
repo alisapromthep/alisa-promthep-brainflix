@@ -4,6 +4,7 @@ import UploadForm from '../../components/UploadForm/UploadForm';
 import {Component} from 'react';
 import UploadComplete from '../../components/UploadComplete/UploadComplete';
 import axios from 'axios';
+import {Helmet} from 'react-helmet';
 import { API_URL, API_KEY } from '../HomePage/HomePage';
 
 
@@ -46,6 +47,9 @@ class UploadPage extends Component {
 
         return (
             <main className='upload'>
+                <Helmet>
+                    <title>Brainflix | Upload Video</title>
+                </Helmet>
                 <h1 className='upload__header'> Upload Video </h1>
                 <UploadForm handleFormSubmit={this.handleFormSubmit}/>
             </main>
