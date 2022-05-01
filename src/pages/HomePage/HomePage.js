@@ -30,6 +30,28 @@ class HomePage extends Component {
   }
 
 
+  //function to add likes 
+
+  addLike = (event)=>{
+    event.preventDefault();
+
+    const likedVideoId = this.state.selectedVideo.id;
+
+    //make a put request 
+    axios
+      .put(`${API_URL}/videos/${likedVideoId}/likes${API_KEY}`)
+      .then((response)=>{
+
+        //then get update video detail 
+        this.getVideoDetails(likedVideoId)
+      })
+      .catch((error)=>{
+        console.log(`couldn't add like`)
+      })
+
+  }
+
+
   componentDidMount(){
 
     axios
@@ -69,6 +91,7 @@ class HomePage extends Component {
       selectedVideoId === undefined ? 
       this.getVideoDetails(firstVideoId) : this.getVideoDetails(selectedVideoId)
     }
+
   }
 
     render() {
@@ -96,7 +119,9 @@ class HomePage extends Component {
                 />
                 <div className='container'>
                 <div className='container__aboutvideo'>
-                    <VideoDescription selectVideo={this.state.selectedVideo}/>
+                    <VideoDescription 
+                    selectVideo={this.state.selectedVideo}
+                    addLike={this.addLike}/>
                     <CommentSection selectComment={this.state.selectedVideo.comments} />
                 </div>
                 <VideoList 

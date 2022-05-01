@@ -3,7 +3,7 @@ import viewsIcon from '../../assets/icons/views.svg';
 import likesIcon from '../../assets/icons/likes.svg';
 import { convertTimeStamp } from '../../Utility/DateTimeFunction';
 
-function VideoDescription ({selectVideo}) {
+function VideoDescription ({selectVideo, addLike}) {
     const {title, channel, timestamp, views, likes, description} = selectVideo
 
     return (
@@ -21,7 +21,9 @@ function VideoDescription ({selectVideo}) {
                         <p className='channelinfo__detail'>{views}</p>
                         </div>
                     <div className='channelinfo__right-box'>
-                        <img className='channelinfo__icon'  src={likesIcon} alt='a heart'/>
+                        <button className='button--like' type='button' onClick={addLike}>
+                            <img className='channelinfo__icon'  src={likesIcon} alt='a heart'/>
+                        </button>
                         <p className='channelinfo__detail'>{likes}</p>
                         </div>
                 </div>
