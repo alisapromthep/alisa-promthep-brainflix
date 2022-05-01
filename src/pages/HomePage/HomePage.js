@@ -66,7 +66,7 @@ class HomePage extends Component {
       window.scrollTo(0,0);
 
       //if undefined, go back to first Video 
-      selectedVideoId == undefined ? 
+      selectedVideoId === undefined ? 
       this.getVideoDetails(firstVideoId) : this.getVideoDetails(selectedVideoId)
     }
   }

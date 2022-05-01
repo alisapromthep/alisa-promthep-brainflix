@@ -6,11 +6,8 @@ import {Link} from 'react-router-dom';
 
 
 
-function UploadForm({handleFormSubmit}) {
+function UploadForm({handleFormSubmit, isTitleFilled, isDescriptionFilled}) {
 
-    const handleSubmit = (event)=>{
-        handleFormSubmit(event);
-    }
 
     return (
         <form 
@@ -24,11 +21,22 @@ function UploadForm({handleFormSubmit}) {
             <div className='uploadform__input-container'>
                 <label className='uploadform__label'>
                     title your video
-                    <input className='uploadform__input' type='text' placeholder='Add a title to your video' name='title' />
+                    <input 
+                    className={`uploadform__input 
+                    ${!isTitleFilled ? 'uploadform__input--error':''}
+                    `} 
+                    type='text' 
+                    placeholder='Add a title to your video' 
+                    name='title' />
                 </label>
                 <label className='uploadform__label'>
                     add a video description
-                    <textarea className='uploadform__input uploadform__input--large' type='text' placeholder='Add a description to your video' name='description' />
+                    <textarea 
+                    className={`uploadform__input uploadform__input--large
+                    ${!isDescriptionFilled ? 'uploadform__input--error':''}
+                    `}
+                    type='text' 
+                    placeholder='Add a description to your video' name='description'/>
                 </label>
             </div>
         </div>

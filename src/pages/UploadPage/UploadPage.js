@@ -11,14 +11,40 @@ import { API_URL, API_KEY } from '../HomePage/HomePage';
 class UploadPage extends Component {
 
     state = {
+        isTitleFilled: true,
+        isDescriptionFilled: true,
         isFormSubmit: false,
     }
 
+    isFormValid = (uploadTitle, uploadDescription) => {
+
+        //check if title is filled 
+        if (!uploadTitle) {
+            this.setState({
+                isTitleFilled: false,
+            })
+        }
+
+        //check if description is filled 
+
+        if(!uploadDescription){
+            this.setState({
+                isDescriptionFilled: false,
+            })
+        }
+
+    }
+    
     handleFormSubmit= (event) => {
         event.preventDefault();
+        
 
         const uploadTitle = event.target.title.value;
         const uploadDescription = event.target.description.value;
+
+        if (!this.isFormValid(uploadTitle, uploadDescription)){
+            return alert(`Please fill out the missing information`)
+        }
 
         axios
             .post(`${API_URL}/videos/${API_KEY}`, {
@@ -32,6 +58,9 @@ class UploadPage extends Component {
                     isFormSubmit: true,
                 })
 
+            })
+            .catch((error)=>{
+                console.log(`error posting`)
             })
 
 
@@ -50,7 +79,12 @@ class UploadPage extends Component {
                     <title>Brainflix | Upload Video</title>
                 </Helmet>
                 <h1 className='upload__header'> Upload Video </h1>
-                <UploadForm handleFormSubmit={this.handleFormSubmit}/>
+                <UploadForm 
+                handleFormSubmit={this.handleFormSubmit}
+                handleChange={this.handleChange}
+                isTitleFilled={this.state.isTitleFilled}
+                isDescriptionFilled={this.state.isDescriptionFilled}
+                />
             </main>
         );
     }
