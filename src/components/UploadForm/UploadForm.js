@@ -2,6 +2,7 @@ import React from 'react';
 import './UploadForm.scss';
 import publish from '../../assets/icons/publish.svg';
 import UploadPreview from '../../assets/images/Upload-video-preview.jpg';
+import {Link} from 'react-router-dom';
 
 
 
@@ -36,7 +37,9 @@ function UploadForm({handleFormSubmit}) {
                     <img className='button__publish-icon' src={publish} alt='arrow up'/>
                     <button type='submit' className='button'>publish</button>
                 </div>
+                <Link to='/'>
                 <button type='button' className='button button--white'>cancel</button>
+                </Link>
             </div>
         </form>
     );

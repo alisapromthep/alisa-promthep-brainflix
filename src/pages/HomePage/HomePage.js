@@ -16,11 +16,11 @@ class HomePage extends Component {
     selectedVideo: [],
   };
 
-  //function fetching movie from the api using movieId 
+  //function fetching video from the api using videoId 
 
-  getMovieDetails = (movieId) => {
+  getVideoDetails = (videoId) => {
     axios
-      .get(`${API_URL}/videos/${movieId}`)
+      .get(`${API_URL}/videos/${videoId}`)
       .then((response)=>{
         this.setState({ selectedVideo: response.data})
       })
@@ -50,7 +50,7 @@ class HomePage extends Component {
       .then ((firstVideoId)=>{
         //calling function to make axios request, passing in the Video Id as parameter. 
         //function also set state for selected videoDetails 
-        this.getMovieDetails(firstVideoId)
+        this.getVideoDetails(firstVideoId)
       })
   }
 
@@ -63,19 +63,19 @@ class HomePage extends Component {
 
       //if undefined, go back to first Video 
       selectedVideoId == undefined ? 
-      this.getMovieDetails(firstVideoId) : this.getMovieDetails(selectedVideoId)
+      this.getVideoDetails(firstVideoId) : this.getVideoDetails(selectedVideoId)
     }
   }
 
     render() {
 
-      if (!this.state.selectedVideo) {
+      if (this.state.selectedVideo.length === 0) {
         return (
           <p>Loading Please Wait</p>
         )
       }
 
-      if (!this.state.videoList) {
+      if (this.state.videoList.length === 0) {
         return (
           <p>Loading Please Wait </p>
         )
