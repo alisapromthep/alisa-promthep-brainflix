@@ -4,7 +4,8 @@ import UploadForm from '../../components/UploadForm/UploadForm';
 import {Component} from 'react';
 import UploadComplete from '../../components/UploadComplete/UploadComplete';
 import axios from 'axios';
-import { API_URL } from '../HomePage/HomePage';
+import { API_URL, API_KEY } from '../HomePage/HomePage';
+
 
 class UploadPage extends Component {
 
@@ -20,7 +21,7 @@ class UploadPage extends Component {
         const uploadDescription = event.target.description.value;
 
         axios
-            .post(`${API_URL}/videos/`, {
+            .post(`${API_URL}/videos/${API_KEY}`, {
                 title: uploadTitle,
                 description: uploadDescription 
             })

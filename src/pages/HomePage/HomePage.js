@@ -8,6 +8,7 @@ import axios from 'axios';
 
 
 export const API_URL = 'http://localhost:8080'; 
+export const API_KEY = '?api_key=1hv9acdgbl2mt2obv'
 
 class HomePage extends Component {
 
@@ -20,7 +21,7 @@ class HomePage extends Component {
 
   getVideoDetails = (videoId) => {
     axios
-      .get(`${API_URL}/videos/${videoId}`)
+      .get(`${API_URL}/videos/${videoId}${API_KEY}`)
       .then((response)=>{
         this.setState({ selectedVideo: response.data})
       })
@@ -31,7 +32,7 @@ class HomePage extends Component {
   componentDidMount(){
 
     axios
-      .get(`${API_URL}/videos/`)
+      .get(`${API_URL}/videos/${API_KEY}`)
       .then((response)=>{
         const videoList = response.data;
         //get video information array, then set state 
